@@ -835,34 +835,7 @@ function startVoice() {
     output.innerText = `You said: "${text}" 💬\nAnd my heart replied: I love you too ❤️`;
   };
 }
-   window.addEventListener("DOMContentLoaded", () => {
-  const reasons = [
-    "Because your smile makes everything better 😍",
-    "Because you understand me like no one else 🤗",
-    "Because you make every moment magical ✨",
-    "Because you're my safe place and my biggest adventure ❤️",
-    "Because loving you is the easiest thing I've ever done 💖",
-    "Because you bring peace to my chaos 🌸",
-    "Because even your silence is comforting to me 🫂",
-    "Because I see forever in your eyes 👀💞",
-    "Because you make me want to be the best version of myself 🌟",
-    "Because you’re my home, my heart, my everything 🏠💘"
-  ];
-
-  const loveBtn = document.getElementById("whyLoveBtn");
-  const reasonText = document.getElementById("reasonText");
-
-  if (loveBtn && reasonText) {
-    loveBtn.addEventListener("click", () => {
-      const randomReason = reasons[Math.floor(Math.random() * reasons.length)];
-      reasonText.innerText = randomReason;
-    });
-  }
-});
-
-
-
-
+   
     // Background music control helpers
     function pauseBgMusic() {
       if (!bgMusic.paused) bgMusic.pause();
