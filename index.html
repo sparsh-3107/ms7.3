@@ -448,10 +448,7 @@
       from { transform: rotate(var(--angle)) translateY(0px); }
       to { transform: rotate(var(--angle)) translateY(-10px); }
     }
-      #gameCanvas {
-  border: 2px solid #ff80ab;
-  touch-action: none;
-      }
+      
       </style>
 </head>
 <body>
@@ -485,11 +482,7 @@
     <p class="quote" aria-label="Birthday quote"
       >"You make the world brighter just by being in it."</p
     >
-<div class="section" id="loveGameSlide" tabindex="0">
-  <p style="font-size: 1.4rem;">🎮 Catch the Hearts!</p>
-  <canvas id="gameCanvas" width="320" height="480" style="background: #fff0f5; border-radius: 1rem; margin: 1rem 0;"></canvas>
-  <p id="scoreText" style="font-size: 1rem;">Score: 0</p>
-</div>
+
 
     <div class="section active" tabindex="0">
       🎂 On this special day, the universe pauses to celebrate you. Your
@@ -791,31 +784,7 @@ setInterval(spawnShootingStar, 7000); // Dark mode only
       voiceBtn.textContent = "▶️ Play Voice Message";
       voiceBtn.setAttribute("aria-pressed", "false");
     });
-    const canvas = document.getElementById("gameCanvas");
-const ctx = canvas?.getContext("2d");
-let hearts = [], score = 0;
-
-function spawnHeart() {
-  hearts.push({ x: Math.random() * 280 + 20, y: 0, r: 15 });
-}
-function drawHeart(x, y, size) {
-  ctx.fillStyle = "#ff4b80";
-  ctx.beginPath();
-  ctx.moveTo(x, y);
-  ctx.bezierCurveTo(x - size, y - size, x - size, y + size, x, y + size * 1.5);
-  ctx.bezierCurveTo(x + size, y + size, x + size, y - size, x, y);
-  ctx.fill();
-}
-function gameLoop() {
-  if (!ctx) return;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  hearts.forEach((h, i) => {
-    h.y += 2;
-    drawHeart(h.x, h.y, h.r);
-    if (h.y > 480) hearts.splice(i, 1);
-  });
-  requestAnimationFrame(gameLoop);
-}
+   
 canvas?.addEventListener("click", (e) => {
   const rect = canvas.getBoundingClientRect();
   const x = e.clientX - rect.left;
