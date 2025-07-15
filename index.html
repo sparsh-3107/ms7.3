@@ -575,9 +575,14 @@
 </div>
 <div class="section" tabindex="0">
   <p style="font-size: 1.5rem;">💘 Why I Love You</p>
-  <button id="whyLoveBtn" style="margin-top: 1rem; font-size: 1rem; padding: 0.6rem 1rem; border-radius: 1rem; background: #ff80ab; color: white; font-family: 'Gloria Hallelujah', cursive; border: none; cursor: pointer;">💬 Tell Me ❤️</button>
-  <p id="reasonText" style="margin-top: 1rem; font-size: 1.2rem; color: #cc3366;"></p>
+  <button id="whyLoveBtn"
+    style="margin-top: 1rem; font-size: 1rem; padding: 0.6rem 1rem; border-radius: 1rem; background: #ff80ab; color: white; font-family: 'Gloria Hallelujah', cursive; border: none; cursor: pointer;">
+    💬 Tell Me ❤️
+  </button>
+  <p id="reasonText"
+    style="margin-top: 1rem; font-size: 1.2rem; color: #cc3366;"></p>
 </div>
+
 
 
     <div class="section" tabindex="0">
@@ -829,26 +834,31 @@ function startVoice() {
     output.innerText = `You said: "${text}" 💬\nAnd my heart replied: I love you too ❤️`;
   };
 }
-    window.onload = function () {
-  // all JS including the addEventListener for #whyLoveBtn goes here
-};
-const reasons = [
-  "Because your smile makes everything better 😍",
-  "Because you understand me like no one else 🤗",
-  "Because you make every moment magical ✨",
-  "Because you're my safe place and my biggest adventure ❤️",
-  "Because loving you is the easiest thing I've ever done 💖",
-  "Because you bring peace to my chaos 🌸",
-  "Because even your silence is comforting to me 🫂",
-  "Because I see forever in your eyes 👀💞",
-  "Because you make me want to be the best version of myself 🌟",
-  "Because you’re my home, my heart, my everything 🏠💘"
-];
+   window.addEventListener("DOMContentLoaded", () => {
+  const reasons = [
+    "Because your smile makes everything better 😍",
+    "Because you understand me like no one else 🤗",
+    "Because you make every moment magical ✨",
+    "Because you're my safe place and my biggest adventure ❤️",
+    "Because loving you is the easiest thing I've ever done 💖",
+    "Because you bring peace to my chaos 🌸",
+    "Because even your silence is comforting to me 🫂",
+    "Because I see forever in your eyes 👀💞",
+    "Because you make me want to be the best version of myself 🌟",
+    "Because you’re my home, my heart, my everything 🏠💘"
+  ];
 
-document.getElementById("whyLoveBtn").addEventListener("click", () => {
-  const randomReason = reasons[Math.floor(Math.random() * reasons.length)];
-  document.getElementById("reasonText").innerText = randomReason;
+  const loveBtn = document.getElementById("whyLoveBtn");
+  const reasonText = document.getElementById("reasonText");
+
+  if (loveBtn && reasonText) {
+    loveBtn.addEventListener("click", () => {
+      const randomReason = reasons[Math.floor(Math.random() * reasons.length)];
+      reasonText.innerText = randomReason;
+    });
+  }
 });
+
 
 
 
